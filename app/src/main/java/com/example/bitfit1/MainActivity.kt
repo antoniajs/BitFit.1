@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         //using Flow, update the recycler view whenever the db is updated
         //taken from the provided lab 5 code
         lifecycleScope.launch {
-            (application as BitFitApplication).db.caloriesDao().getAll().collect{ databaseList ->
+            (application as BitFitApplication).db.caloriesDao().getAll().collect{databaseList ->
                 databaseList.map { entity -> 
                     Calories(
                         entity.name,
